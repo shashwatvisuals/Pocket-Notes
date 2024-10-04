@@ -73,3 +73,102 @@ html body {
     align-items: center;
 }
 
+#modalContent {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #ffffff;
+    padding: 10px 30px 30px 30px;
+    width: 740px;
+    height: 317px;
+    border-radius: 10px;
+}
+
+#modalContent h1 {
+    text-align: start;
+}
+
+.modalWrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: #2f2f2fbf;
+}
+
+.modalInput{
+    display: flex;
+    flex-direction: row;
+    margin: 15px 15px 35px 20px;
+}
+
+.modalInput h2 {
+    margin-right: 40px;
+}
+
+.modalInput input {
+    width: 435px;
+    height: 51px;
+    border-radius: 20px;
+    border: 2px solid #cccccc;
+    padding: 0px 20px;
+}
+
+.modalChooseColor {
+    display: flex;
+    flex-direction: row;
+    margin: 15px 15px 15px 20px;
+}
+
+.modalChooseColor h2 {
+    margin-right: 80px
+}
+
+.chooseColorButton button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+
+}
+
+.firstButton {
+    background: #B38BFA;
+    margin: 0px 5px;
+}
+.secondButton {
+    background: #FF79F2;
+    margin: 0px 5px;
+}
+.thirdButton {
+    background: #43E6FC;
+    margin: 0px 5px;
+
+}
+.fourthButton {
+    background: #F19576;
+    margin: 0px 5px;
+}
+.fifthButton {
+    background: #0047FF;
+    margin: 0px 5px;
+}
+.sixthButton {
+    background: #6691FF;
+    margin: 0px 5px;
+}
+
+.createButton {
+    float: right;
+    height: 38px;
+    width: 154px;
+    background: #001F8B;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 20px;
+    border: none;
+    border-radius: 11px;
+
+}
