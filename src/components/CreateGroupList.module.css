@@ -72,7 +72,8 @@ html body {
     justify-content: center;
     align-items: center;
 }
-
+/* ----------------------------------------------------------------------------------------- */
+/* Create Group Modal Section start */
 #modalContent {
     position: fixed;
     top: 50%;
@@ -135,28 +136,28 @@ html body {
 }
 
 .firstButton {
-    background: #B38BFA;
+    background-color: #B38BFA;
     margin: 0px 5px;
 }
 .secondButton {
-    background: #FF79F2;
+    background-color: #FF79F2;
     margin: 0px 5px;
 }
 .thirdButton {
-    background: #43E6FC;
+    background-color: #43E6FC;
     margin: 0px 5px;
 
 }
 .fourthButton {
-    background: #F19576;
+    background-color: #F19576;
     margin: 0px 5px;
 }
 .fifthButton {
-    background: #0047FF;
+    background-color: #0047FF;
     margin: 0px 5px;
 }
 .sixthButton {
-    background: #6691FF;
+    background-color: #6691FF;
     margin: 0px 5px;
 }
 
@@ -172,3 +173,5 @@ html body {
     border-radius: 11px;
 
 }
+/* Create Group Modal Section End */
+/* ----------------------------------------------------------------------------------------- */

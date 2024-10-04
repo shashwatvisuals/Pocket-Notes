@@ -1,5 +1,5 @@
 import React from 'react'
-import GroupList from './components/GroupList'
+import GroupList from './components/CreateGroupList'
 import styles from './App.module.css'
 import NoteContainer from './components/NoteContainer'
 
