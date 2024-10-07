@@ -1,11 +1,29 @@
 import {React, useState, useRef, useEffect } from 'react'
 import styles from './CreateGroupList.module.css'
+import GroupList from './GroupList';
+import { getGroupsFromLocalStorage, saveGroupsToLocalStorage } from './LocalStorage';
 
 
-function GroupList() {
+function CreateGroupList() {
   const data = useRef();
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [pickedColor, setPickedColor] = useState('')
+  // const [inputValue, setInputValue] = useState('');
+  const [groups, setGroups] = useState([]);
+
+  // Load groups from localStorage on component mount
+  useEffect(() => {
+    const storedGroups = getGroupsFromLocalStorage();
+    setGroups(storedGroups);
+  }, []);
+
+    // Save groups to localStorage whenever the groups array changes
+    useEffect(() => {
+      if (groups.length > 0) {
+        saveGroupsToLocalStorage(groups);
+      }
+    }, [groups]);
+
 const handleGroupCreate = () => {
   // console.log("You clicked on + icon")
   setIsModalOpen(true)
@@ -18,21 +36,28 @@ const pickColor = (e) => {
   // console.log(pickedColor)
 }
 const handleCreate = () => {
-  let inputValue = data.current.value;
-  if(!inputValue || !pickedColor){
+  let inputVal = data.current.value;
+  if(!inputVal || !pickedColor){
     alert("Please enter a group name and pick a color.")
   }else{
-  console.log(inputValue)
-  console.log(pickedColor)
-  // setIsModalOpen(false)
+  const newGroup = {
+    name: inputVal,
+    color: pickedColor
+  };
+  // console.log(inputValue)
+  // console.log(pickedColor)
+  setGroups((prevGroups) => [...prevGroups, newGroup]);
+  setIsModalOpen(false)
   console.log("you clicked on create button")
   data.current.value =""
   setPickedColor('')
-
   }
+  // event.preventDefault();
 }
+const closeModal = () => setIsModalOpen(false);
 const modalContent = (
-  <div className={styles.modalWrapper}>
+  <>
+  <div onClick={closeModal} className={styles.modalWrapper}></div>
   <div id={styles.modalContent}>
   <h1>Create New group</h1>
   <div className={styles.modalInput}>
@@ -52,17 +77,15 @@ const modalContent = (
   </div>
   <button className={styles.createButton} onClick={handleCreate}>Create</button>
   </div>
-  </div>
+  </>
 )
 
 
 
   return (
     <div className={styles.mainContainer}>
-    <h1>Pocket Notes</h1>
     <div className={styles.groupContainer}>
-      <p> 
-      </p>
+   <GroupList groups = {groups}/>
     </div>
     <button onClick={handleGroupCreate} className={styles.addGroupsButton}>+</button>
     {isModalOpen && modalContent}
@@ -70,4 +93,4 @@ const modalContent = (
   )
 }
 
-export default GroupList
+export default CreateGroupList

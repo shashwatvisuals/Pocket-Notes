@@ -1,7 +1,12 @@
-import React from 'react'
+import {React,useState} from 'react'
 import styles from './NoteContainer.module.css'
+// import GroupList from './GroupList'
 
 function NoteContainer() {
+  // const [isVisible, setIsVisible] = useState(true);
+  // const clickOnGroupName = () => {
+  //   setIsVisible(false);
+  // }
   return (
     <div className={styles.mainContainer}>
     <div className={styles.noteContainer}>
@@ -16,3 +21,5 @@ function NoteContainer() {
 }
 
 export default NoteContainer
+
+//style={{ display: isVisible ? 'block' : 'none' }}

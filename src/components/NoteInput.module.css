@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 70vw;
+}
+
+.noteHeader{
+    background: #001F8B;
+    height: 9vh;
+
+}
+
+.noteSection {
+    background: #DAE5F5;
+    height: 71vh;
+}
+
+.noteSection p {
+    width: auto;
+    height: auto;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 20px 20px 40px 20px;
+    margin: 20px 20px 30px 20px;
+    text-align: justify;
+}
+
+.inputFeildBorder{
+    border: 20px solid #001F8B;
+    background-color: #001F8B;
+}
+
+.inputFeild {
+    position: relative;
+    background: #FFFFFF;
+    height: 20vh;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.textArea {
+    font-family: 'Roboto';
+    height: 20vh;
+    width:70vw; 
+    border-radius: 10px;
+    outline: none;
+    padding: 10px 30px 10px 20px;
+    font-size: 29.82px;
+    font-weight: 400;
+    /* resize: none; */
+}
+
+.sendIcon {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background-color: transparent;
+    border: none;
+}

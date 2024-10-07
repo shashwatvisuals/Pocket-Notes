@@ -4,32 +4,23 @@
     box-sizing: border-box;
 }
 
-html body {
+/* html body {
     height: 100;
     width: 30;
-}
+} */
 
-.mainContainer {
-    height: 100vh;
-    width: 30vw;
+/* .mainContainer {
+    width: 100vw;
     display: flex;
     flex-direction: column;
-}
+    overflow-y: auto;
+} */
 
-.groupContainer {
-    font-family: 'Roboto';
-    height: 100%;
-    width: 100%;
-    background-color: #ffffff;
-    padding-top: 50px;
-    overflow-y:auto;
-    padding: 2px 20px 40px 50px;
-}
 /* ------------------------------------------------------------------------------------------- */
 
 /* This CSS Property I have used for Scrollbar */
 
-.groupContainer::-webkit-scrollbar {
+/* .groupContainer::-webkit-scrollbar {
     width: 10px;
 }
 
@@ -43,7 +34,7 @@ html body {
     border-radius: 10px;
     border: 1.5px solid #D9D9D9;
     ;
-}
+} */
 
 /* --------------------------------------------------------------------------------------------*/
 
@@ -66,6 +57,7 @@ html body {
     font-size: 70px;
     font-weight: 500;
     bottom: 20px;
+    left: 20vw;
     align-self: flex-end;
     margin-right: 35px;
     display: flex;
