@@ -9,6 +9,7 @@ function NoteInput() {
   const [note, setNote] = useState('')
   const [isButtonDisable, setIsButtonDisable] = useState(true)
   const [submittedNote, setSubmittedNote] = useState({ noteText: '', timeStamp: '' })
+  const [storedNotes, setStorednotes] = useState([]);
 
   const handleChange = (e) => {
     const value = e.target.value
@@ -33,8 +34,10 @@ function NoteInput() {
 
     if(note.trim()){
       const timeStamp = getTimeStamp();
+      const newNote = { noteText: note, timeStamp };
       setSubmittedNote({ noteText: note, timeStamp })
       setIsMessageVisible(true)
+      setStorednotes([...storedNotes, newNote])
     }
     setIconColor("#1010104d");
     setIsButtonDisable(true)
@@ -50,15 +53,14 @@ function NoteInput() {
     <div className={styles.mainDiv}>
       <div className={styles.noteHeader}></div>
       <div className={styles.noteSection}>
-      {isMessageVisible && <div>
-        <div className={styles.singleNoteSection}>
+      {storedNotes.map((noteObj, index) => (
+        <div key={index} className={styles.singleNoteSection}>
         <p>
-          {submittedNote.noteText}
+          {noteObj.noteText}
         </p>
-        <small>{submittedNote.timeStamp}</small>
+        <small>{noteObj.timeStamp}</small>
         </div>
-        </div>
-      }
+      ))}
         </div>
       <div className={styles.inputFeildBorder}>
         <div

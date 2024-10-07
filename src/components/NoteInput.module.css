@@ -96,3 +96,12 @@
     background-color: transparent;
     border: none;
 }
+
+.sendIcon:hover {
+    cursor: pointer;
+}
+
+.sendIconx {
+    height: 29px;
+    width: 34px;
+}
