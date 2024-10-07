@@ -22,7 +22,8 @@
     height: 71vh;
 }
 
-.noteSection p {
+.singleNoteSection {
+    font-family: 'Roboto';
     width: auto;
     height: auto;
     background-color: #FFFFFF;
@@ -30,6 +31,36 @@
     padding: 20px 20px 40px 20px;
     margin: 20px 20px 30px 20px;
     text-align: justify;
+    display: flex;
+    flex-direction: column;
+    position: relative
+}
+
+.singleNoteSection p {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.singleNoteSection small {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+/* .noteSection p {
+    width: auto;
+    height: auto;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 20px 20px 40px 20px;
+    margin: 20px 20px 30px 20px;
+    text-align: justify;
+} */
+
+.noteSection small {
+    padding-top: 10px;
 }
 
 .inputFeildBorder{

@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 import styles from './NoteInput.module.css'
 import { IoSendSharp } from "react-icons/io5";
+import { getTimeStamp } from '../utils/DateAndTime';
 
 function NoteInput() {
   const [iconColor, setIconColor] = useState("#1010104d")
   const [isMessageVisible, setIsMessageVisible] = useState(false)
   const [note, setNote] = useState('')
   const [isButtonDisable, setIsButtonDisable] = useState(true)
-  const [submittedNote, setSubmittedNote] = useState('')
+  const [submittedNote, setSubmittedNote] = useState({ noteText: '', timeStamp: '' })
 
   const handleChange = (e) => {
     const value = e.target.value
@@ -26,14 +27,13 @@ function NoteInput() {
 
 
   const submitNote = (e) => {
-    console.log("you entered on submit form")
+
     e.preventDefault();
-    console.log("crossed prevent section")
-    setSubmittedNote(note)
-    console.log("crossed setsubmitted note")
+    // setSubmittedNote(note)
+
     if(note.trim()){
-      console.log('Form submitted with input:', note)
-      console.log('Form submitted with input:',submittedNote)
+      const timeStamp = getTimeStamp();
+      setSubmittedNote({ noteText: note, timeStamp })
       setIsMessageVisible(true)
     }
     setIconColor("#1010104d");
@@ -51,7 +51,12 @@ function NoteInput() {
       <div className={styles.noteHeader}></div>
       <div className={styles.noteSection}>
       {isMessageVisible && <div>
-        <p>{submittedNote}</p>
+        <div className={styles.singleNoteSection}>
+        <p>
+          {submittedNote.noteText}
+        </p>
+        <small>{submittedNote.timeStamp}</small>
+        </div>
         </div>
       }
         </div>
