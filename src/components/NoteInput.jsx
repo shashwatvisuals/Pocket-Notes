@@ -3,7 +3,7 @@ import styles from './NoteInput.module.css'
 import { IoSendSharp } from "react-icons/io5";
 import { getTimeStamp } from '../utils/DateAndTime';
 
-function NoteInput() {
+function NoteInput({ groupName, groupLogo, groupColor }) {
   const [iconColor, setIconColor] = useState("#1010104d")
   const [isMessageVisible, setIsMessageVisible] = useState(false)
   const [note, setNote] = useState('')
@@ -51,7 +51,10 @@ function NoteInput() {
 
   return (
     <div className={styles.mainDiv}>
-      <div className={styles.noteHeader}></div>
+      <div className={styles.noteHeader}>
+      <div className={styles.logo} style={{ backgroundColor: groupColor }}>{groupLogo}</div>
+      <h2>{groupName}</h2>
+      </div>
       <div className={styles.noteSection}>
       {storedNotes.map((noteObj, index) => (
         <div key={index} className={styles.singleNoteSection}>

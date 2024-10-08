@@ -1,19 +1,30 @@
 import React, { useState } from 'react'
 import styles from './GroupList.module.css'
-import NoteContainer from './NoteContainer'
-import NoteInput from './NoteInput'
+// import NoteContainer from './NoteContainer'
+// import NoteInput from './NoteInput'
 
 
 
-function GroupList({groups}) {
-  const [showNoteInput, setShowNoteInput] = useState(true);
-  const [isClicked, setIsClicked] = useState(false);
-  const handleClickOnName = () =>{
-    setShowNoteInput(false);
-    console.log("you clicked on group name")
-    setIsClicked(true);
-  }
-const createlogo = (name) => {
+function GroupList({groups,  onSelectGroup}) {
+  // const [showNoteInput, setShowNoteInput] = useState(true);
+  // const [isClicked, setIsClicked] = useState(false);
+  // const handleClickOnName = () =>{
+  //   setShowNoteInput(false);
+  //   console.log("you clicked on group name")
+  //   setIsClicked(true);
+  // }
+
+
+  // const handleClickOnName = (group) => {
+  //   onSelectGroup(group);
+  //   console.log("You clicked on group name: ", group.name);
+  // };
+  
+
+
+
+
+const createlogo = (name, onSelectGroup) => {
   const words = name.split(' ');
   if(typeof name !== 'string' || name.trim().length === 0) return (' ');
   const firstLetter = words[0].charAt(0).toUpperCase();
@@ -30,23 +41,28 @@ const createlogo = (name) => {
     <div className={styles.parentContainer}>
       <div className={styles.groupContainerHeader}>
       <h1>Pocket Notes</h1>
-      <div className={styles.groupNameBox}>
+        <div className={styles.groupNameBox}>
           {groups.map((group, index) => {
-          const logo = createlogo(group.name);
-        return (
-          <div onClick={!isClicked ? handleClickOnName:null} key = {index} className={styles.groupItem}>
-            <div className={styles.logoContainer} style={{backgroundColor: group.color}}>
-              <div className={styles.logo}>{logo}</div>
-            </div>
-            <p className={styles.groupName}>{group.name}</p>
-          </div>
+            const logo = createlogo(group.name);
+            return (
+              <div
+              
+                key={index}
+                onClick={() => onSelectGroup(group,logo)} // Call the onSelectGroup function
+                className={styles.groupItem}
+              >
+                <div className={styles.logoContainer} style={{ backgroundColor: group.color }}>
+                  <div className={styles.logo}>{logo}</div>
+                </div>
+                <p className={styles.groupName}>{group.name}</p>
+              </div>
         )
       })}
       </div>
       </div>
-      <div>
+      {/* <div>
       {showNoteInput ? (<NoteContainer className={styles.noteListContainer}/>):(< NoteInput className={styles.noteListContainer}/>)}
-      </div>
+      </div> */}
     </div>
   )
 }

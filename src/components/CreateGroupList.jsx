@@ -2,6 +2,7 @@ import {React, useState, useRef, useEffect } from 'react'
 import styles from './CreateGroupList.module.css'
 import GroupList from './GroupList';
 import { getGroupsFromLocalStorage, saveGroupsToLocalStorage } from './LocalStorage';
+import NoteInput from './NoteInput';
 
 
 function CreateGroupList() {
@@ -10,6 +11,27 @@ function CreateGroupList() {
   const [pickedColor, setPickedColor] = useState('')
   // const [inputValue, setInputValue] = useState('');
   const [groups, setGroups] = useState([]);
+  const [selectedGroup, setSelectedGroup] = useState(null);
+
+  //--------------------------------------------------------
+
+  const createLogo = (name) => {
+    const words = name.split(' ');
+    if (typeof name !== 'string' || name.trim().length === 0) return ' ';
+    
+    const firstLetter = words[0].charAt(0).toUpperCase();
+    let secondLetter = '';
+    
+    if (words.length > 1) {
+      secondLetter = words[1].charAt(0).toUpperCase();
+    } else if (name.length > 1) {
+      secondLetter = name.charAt(1).toUpperCase();
+    }
+    
+    return firstLetter + (secondLetter ? secondLetter : '');
+  };
+
+  //----------------------------------------------------------
 
   // Load groups from localStorage on component mount
   useEffect(() => {
@@ -55,6 +77,13 @@ const handleCreate = () => {
   // event.preventDefault();
 }
 const closeModal = () => setIsModalOpen(false);
+
+
+const handleSelectGroup = (group) => {
+  setSelectedGroup(group); // Set the selected group
+};
+
+
 const modalContent = (
   <>
   <div onClick={closeModal} className={styles.modalWrapper}></div>
@@ -85,10 +114,13 @@ const modalContent = (
   return (
     <div className={styles.mainContainer}>
     <div className={styles.groupContainer}>
-   <GroupList groups = {groups}/>
+   <GroupList groups = {groups}onSelectGroup={handleSelectGroup}/>
     </div>
     <button onClick={handleGroupCreate} className={styles.addGroupsButton}>+</button>
     {isModalOpen && modalContent}
+    {selectedGroup && <NoteInput groupName={selectedGroup.name} 
+    groupLogo={createLogo(selectedGroup.name)}
+    groupColor={selectedGroup.color}/>}
     </div>  
   )
 }

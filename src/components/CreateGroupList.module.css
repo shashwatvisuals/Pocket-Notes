@@ -9,12 +9,12 @@
     width: 30;
 } */
 
-/* .mainContainer {
+.mainContainer {
     width: 100vw;
     display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-} */
+    flex-direction: row;
+    /* overflow-y: auto; */
+}
 
 /* ------------------------------------------------------------------------------------------- */
 

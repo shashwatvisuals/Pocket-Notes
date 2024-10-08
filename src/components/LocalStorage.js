@@ -10,3 +10,12 @@ export const getGroupsFromLocalStorage = () => {
   export const clearGroupsFromLocalStorage = () => {
     localStorage.removeItem('groups');
   };
+
+
+
+  // useEffect(() => {
+  //   if (groups.length > 0) {
+  //     saveGroupsToLocalStorage(groups);
+  //   }
+  // }, [groups]);
+  

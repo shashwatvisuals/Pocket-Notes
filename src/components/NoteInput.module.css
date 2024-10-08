@@ -13,8 +13,26 @@
 
 .noteHeader{
     background: #001F8B;
-    height: 9vh;
+    height: 14vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+    color: #ffffff;
 
+}
+
+.logo {
+    width: 69px;
+    height: 69px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 69px;
+    margin-right: 30px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    
 }
 
 .noteSection {
