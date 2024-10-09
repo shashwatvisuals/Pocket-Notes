@@ -3,6 +3,7 @@ import styles from './CreateGroupList.module.css'
 import GroupList from './GroupList';
 import { getGroupsFromLocalStorage, saveGroupsToLocalStorage } from './LocalStorage';
 import NoteInput from './NoteInput';
+import NoteContainer from './NoteContainer';
 
 
 function CreateGroupList() {
@@ -11,10 +12,17 @@ function CreateGroupList() {
   const [pickedColor, setPickedColor] = useState('')
   // const [inputValue, setInputValue] = useState('');
   const [groups, setGroups] = useState([]);
-  const [selectedGroup, setSelectedGroup] = useState(null);
+  const [selectedGroup, setSelectedGroup] = useState(false);
 
   //--------------------------------------------------------
-
+// if(!selectedGroup){
+//   return(
+//     <div style={{display:"flex", flexDirection:"row"}}>
+//     <GroupList/>
+//     <NoteContainer/>
+//     </div>
+//   )
+// }
   const createLogo = (name) => {
     const words = name.split(' ');
     if (typeof name !== 'string' || name.trim().length === 0) return ' ';
@@ -116,11 +124,18 @@ const modalContent = (
     <div className={styles.groupContainer}>
    <GroupList groups = {groups}onSelectGroup={handleSelectGroup}/>
     </div>
-    <button onClick={handleGroupCreate} className={styles.addGroupsButton}>+</button>
+    <div>
+    <button onClick={handleGroupCreate} className="addGroupsButton">+</button>
     {isModalOpen && modalContent}
-    {selectedGroup && <NoteInput groupName={selectedGroup.name} 
+    {selectedGroup && <NoteInput style={{}} groupName={selectedGroup.name} 
     groupLogo={createLogo(selectedGroup.name)}
     groupColor={selectedGroup.color}/>}
+</div>
+<div>
+  {!selectedGroup &&
+<NoteContainer/>
+}
+</div>
     </div>  
   )
 }

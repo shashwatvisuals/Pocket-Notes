@@ -167,3 +167,12 @@
 }
 /* Create Group Modal Section End */
 /* ----------------------------------------------------------------------------------------- */
+@media (max-width:800px) {
+    .mainContainer {
+        width: 100vw;
+        display: flex;
+        /* flex-direction: column; */
+        /* overflow-y: auto; */
+        position: relative;
+    }
+}

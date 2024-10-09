@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import styles from './GroupList.module.css'
 // import NoteContainer from './NoteContainer'
-// import NoteInput from './NoteInput'
+import NoteInput from './NoteInput'
 
 
 
-function GroupList({groups,  onSelectGroup}) {
+function GroupList({groups,  onSelectGroup, onButtonClick}) {
+  console.log(onButtonClick)
+
+
   // const [showNoteInput, setShowNoteInput] = useState(true);
   // const [isClicked, setIsClicked] = useState(false);
   // const handleClickOnName = () =>{
@@ -24,7 +27,7 @@ function GroupList({groups,  onSelectGroup}) {
 
 
 
-const createlogo = (name, onSelectGroup) => {
+const createlogo = (name) => {
   const words = name.split(' ');
   if(typeof name !== 'string' || name.trim().length === 0) return (' ');
   const firstLetter = words[0].charAt(0).toUpperCase();
@@ -46,9 +49,10 @@ const createlogo = (name, onSelectGroup) => {
             const logo = createlogo(group.name);
             return (
               <div
-              
                 key={index}
-                onClick={() => onSelectGroup(group,logo)} // Call the onSelectGroup function
+                onClick={() => {
+                  {onButtonClick};
+                  onSelectGroup(group,logo)}} // Call the onSelectGroup function
                 className={styles.groupItem}
               >
                 <div className={styles.logoContainer} style={{ backgroundColor: group.color }}>

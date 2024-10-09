@@ -52,3 +52,10 @@ html body {
 .endToEnd img {
     height: 15px;
 }
+
+@media (max-width:800px) {
+    .mainContainer {
+        display: none;
+    }
+
+}

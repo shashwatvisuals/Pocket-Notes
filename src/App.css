@@ -1,0 +1,43 @@
+
+.backArrow {
+display:none;
+}
+
+.addGroupsButton {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    border: none;
+    margin: 10px;
+    position: fixed;
+    background-color: #16008b;
+    color: #ffffff;
+    font-size: 70px;
+    font-weight: 500;
+    bottom: 20px;
+    left: 20vw;
+    align-self: flex-end;
+    margin-right: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width : 800px){
+
+.backArrow {
+    margin-right: 20px;
+    display: block;
+    height: 11.15px;
+    width: 15.58px;
+    color: #ffffff;
+    
+}
+.addGroupsButton {
+    position:absolute;
+    left: 75%;
+}
+.hidden {
+    display: none;
+}
+}
