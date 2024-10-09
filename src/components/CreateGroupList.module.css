@@ -192,4 +192,8 @@
         width: 30px;
 
     }
+
+    .modalInput input {
+        width:150px;
+    }
 }
