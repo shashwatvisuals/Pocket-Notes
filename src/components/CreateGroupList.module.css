@@ -72,7 +72,7 @@
     left: 50%;
     transform: translate(-50%,-50%);
     background-color: #ffffff;
-    padding: 10px 30px 30px 30px;
+    padding: 10px 5px 30px 30px;
     width: 740px;
     height: 317px;
     border-radius: 10px;
@@ -162,6 +162,7 @@
     font-weight: 400;
     font-size: 20px;
     border: none;
+    margin-right: 30px;
     border-radius: 11px;
 
 }
@@ -174,5 +175,21 @@
         /* flex-direction: column; */
         /* overflow-y: auto; */
         position: relative;
+    }
+
+    #modalContent {
+        width: 90vw;
+        height: 350px;
+    }
+
+    .modalChooseColor h2 {
+        margin-right: 10px
+    }
+    
+
+    .chooseColorButton button {
+        height: 30px;
+        width: 30px;
+
     }
 }
