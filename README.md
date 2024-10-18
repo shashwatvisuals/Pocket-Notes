@@ -1,4 +1,5 @@
 🚀 Pocket Notes
+<br/><br/>
 Welcome to Pocket Notes — your personal, minimalist, and colorful note-taking companion! 
 --
 📒✨ Whether you’re jotting down ideas, organizing to-do lists, or keeping track of your brilliant thoughts, Pocket Notes helps you stay organized with a smooth and clutter-free interface. Take control of your notes, your way!
