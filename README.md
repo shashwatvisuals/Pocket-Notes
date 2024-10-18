@@ -5,7 +5,7 @@ Welcome to Pocket Notes — your personal, minimalist, and colorful note-taking 
 📒✨ Whether you’re jotting down ideas, organizing to-do lists, or keeping track of your brilliant thoughts, Pocket Notes helps you stay organized with a smooth and clutter-free interface. Take control of your notes, your way!
 
 🌐 Live Demo: [Pocket Notes on Vercel](https://pocket-notes-neon.vercel.app/)
-<br/>
+<br/><br/>
 🖼️ Preview
 <br/><br/>
 (1) Web View
